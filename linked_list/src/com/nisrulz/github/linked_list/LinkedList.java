@@ -61,6 +61,27 @@ public class LinkedList {
         return tempNode;
     }
 
+    public void deleteNode(int data) {
+        Node nodeToBeDeleted = head;
+        Node prevNode = null;
+
+        if (nodeToBeDeleted != null && nodeToBeDeleted.data == data) {
+            head = nodeToBeDeleted.next;
+            return;
+        }
+
+        while (nodeToBeDeleted.data != data) {
+            prevNode = nodeToBeDeleted;
+            nodeToBeDeleted = nodeToBeDeleted.next;
+        }
+
+        if (nodeToBeDeleted == null) {
+            return;
+        }
+
+        prevNode.next = nodeToBeDeleted.next;
+    }
+
     public void printLinkedList() {
         Node tempNode = head;
         while (tempNode.next != null) {

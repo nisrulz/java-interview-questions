@@ -22,5 +22,14 @@ public class Main {
         System.out.println("\nAdding 45 to back");
         linkedList.insertNodeAtBack(45);
         linkedList.printLinkedList();
+
+
+        System.out.println("\nDeleting Node with value 20");
+        linkedList.deleteNode(20);
+        linkedList.printLinkedList();
+
+        System.out.println("\nDeleting Node with value 5");
+        linkedList.deleteNode(5);
+        linkedList.printLinkedList();
     }
 }
