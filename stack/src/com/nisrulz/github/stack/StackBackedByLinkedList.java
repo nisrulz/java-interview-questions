@@ -11,9 +11,14 @@ public class StackBackedByLinkedList implements Stack {
         }
     }
 
+
     private Node top = null;
     private int size = 1;
+    int capacity;
 
+    public StackBackedByLinkedList(int capacity) {
+        this.capacity = capacity;
+    }
 
     @Override
     public int size() {
@@ -22,18 +27,20 @@ public class StackBackedByLinkedList implements Stack {
 
     @Override
     public void push(int data) {
-        Node newNode = new Node(data);
+        if (size() >= capacity) {
+            System.out.println("StackBackedByLinkedList is full!");
+        } else {
+            Node newNode = new Node(data);
 
-        if (top == null) {
-            top = newNode;
-            return;
+            if (top == null) {
+                top = newNode;
+                return;
+            }
+
+            newNode.next = top.next;
+            top.next = newNode;
+            size++;
         }
-
-
-        newNode.next = top.next;
-        top.next = newNode;
-        size++;
-
     }
 
     @Override

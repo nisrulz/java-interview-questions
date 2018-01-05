@@ -18,7 +18,7 @@ public class StackBackedByArray implements Stack {
     public void push(int data) {
 
         if (top == arr.length - 1) {
-            System.out.println("StackBackedByArray is full");
+            System.out.println("StackBackedByArray is full!");
             return;
         }
         arr[++top] = data;
@@ -28,7 +28,7 @@ public class StackBackedByArray implements Stack {
     public int pop() {
 
         if (top == -1) {
-            System.out.println("StackBackedByArray is empty");
+            System.out.println("StackBackedByArray is empty!");
             return -1;
         }
         return arr[top--];
