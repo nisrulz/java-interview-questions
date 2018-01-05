@@ -21,13 +21,13 @@ public class Main {
             if (x >= -128 && x <= 127) {
                 System.out.println("* byte");
             }
-            if (x >= -(Math.pow(2, 16)) && x <= (Math.pow(2, 16) - 1)) {
+            if (x >= -(Math.pow(2, 15)) && x <= (Math.pow(2, 15) - 1)) {
                 System.out.println("* short");
             }
-            if (x >= -(Math.pow(2, 32)) && x <= (Math.pow(2, 32) - 1)) {
+            if (x >= -(Math.pow(2, 31)) && x <= (Math.pow(2, 31) - 1)) {
                 System.out.println("* int");
             }
-            if (x >= -(Math.pow(2, 64)) && x <= (Math.pow(2, 64) - 1)) {
+            if (x >= -(Math.pow(2, 63)) && x <= (Math.pow(2, 63) - 1)) {
                 System.out.println("* long");
             }
         } catch (Exception e) {
