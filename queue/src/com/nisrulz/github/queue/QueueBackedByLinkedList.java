@@ -2,6 +2,16 @@ package com.nisrulz.github.queue;
 
 public class QueueBackedByLinkedList implements Queue {
 
+    class Node {
+        Node next;
+        int data;
+
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
     Node front = null;
     Node rear = null;
 
@@ -46,16 +56,5 @@ public class QueueBackedByLinkedList implements Queue {
         }
 
         return tempNode.data;
-    }
-
-
-    class Node {
-        Node next;
-        int data;
-
-        public Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
     }
 }
