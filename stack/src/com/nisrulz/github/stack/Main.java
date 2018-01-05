@@ -3,34 +3,35 @@ package com.nisrulz.github.stack;
 public class Main {
 
     public static void main(String[] args) {
-        Stack stack = new Stack(4);
 
-        int val;
+        System.out.println("\n>> StackBackedByArray:");
+        StackBackedByArray stackBackedByArray = new StackBackedByArray(5);
+        operateOnStack(stackBackedByArray);
+
+        System.out.println("\n>> StackBackedByLinkedList:");
+        StackBackedByLinkedList stackBackedByLinkedList = new StackBackedByLinkedList();
+        operateOnStack(stackBackedByLinkedList);
+    }
 
 
-        // will output stack is empty, because initially the stack is empty
-        val = stack.pop();
-        System.out.println(val);
+    private static void operateOnStack(Stack stack) {
+        // Initially the queue is empty, so attempting to dequeue now should output empty queue
+        int val = stack.pop();
 
-        stack.push(4);
-        stack.push(3);
-        stack.push(2);
-        stack.push(1);
+        // add value to queue
+        System.out.println("\n> Adding values to stack\n");
+        for (int i = 0; i < 5; i++) {
+            stack.push(i);
+            // get size of queue
+            System.out.println("Value added " + i + ", Size of Stack: " + stack.size());
+        }
 
-        // Will output stack is full
-        stack.push(0);
 
-        val = stack.pop();
-        System.out.println(val);
-        val = stack.pop();
-        System.out.println(val);
-        val = stack.pop();
-        System.out.println(val);
-        val = stack.pop();
-        System.out.println(val);
-
-        // all values have been popped out as per capacity, will output stack is emty
-        val = stack.pop();
-        System.out.println(val);
+        // remove value from queue
+        System.out.println("\n> Removing values from stack\n");
+        for (int i = 0; i < 7; i++) {
+            val = stack.pop();
+            System.out.println("Value removed " + val + ", Size of Stack: " + stack.size());
+        }
     }
 }
