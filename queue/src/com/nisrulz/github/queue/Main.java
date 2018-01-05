@@ -15,30 +15,23 @@ public class Main {
 
 
     private static void operateOnQueue(Queue queue) {
-        // would output empty queue
+        // Initially the queue is empty, so attempting to dequeue now should output empty queue
         int val = queue.dequeue();
-        System.out.println(val);
 
-        queue.enqueue(5);
-        queue.enqueue(4);
-        queue.enqueue(3);
-        queue.enqueue(2);
-        queue.enqueue(1);
+        // add value to queue
+        System.out.println("\n> Adding values to queue\n");
+        for (int i = 0; i < 5; i++) {
+            queue.enqueue(i);
+            // get size of queue
+            System.out.println("Value added " + i + ", Size of Queue: " + queue.size());
+        }
 
 
-        val = queue.dequeue();
-        System.out.println(val);
-        val = queue.dequeue();
-        System.out.println(val);
-        val = queue.dequeue();
-        System.out.println(val);
-        val = queue.dequeue();
-        System.out.println(val);
-        val = queue.dequeue();
-        System.out.println(val);
-
-        // would output empty queue
-        val = queue.dequeue();
-        System.out.println(val);
+        // remove value from queue
+        System.out.println("\n> Removing values from queue\n");
+        for (int i = 0; i < 7; i++) {
+            val = queue.dequeue();
+            System.out.println("Value removed " + val + ", Size of Queue: " + queue.size());
+        }
     }
 }

@@ -12,13 +12,14 @@ public class QueueBackedByLinkedList implements Queue {
         }
     }
 
-    Node front = null;
-    Node rear = null;
+    private Node front = null;
+    private Node rear = null;
+    private int size = 1;
 
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
@@ -34,6 +35,7 @@ public class QueueBackedByLinkedList implements Queue {
         // Add the new node at the end of queue and change rear
         rear.next = newNode;
         rear = newNode;
+        size++;
 
     }
 
@@ -49,6 +51,7 @@ public class QueueBackedByLinkedList implements Queue {
         // Store previous front and move front one node ahead
         Node tempNode = front;
         front = front.next;
+        size--;
 
         if (front == null) {
             rear = null;
