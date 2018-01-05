@@ -16,6 +16,11 @@ public class QueueBackedByLinkedList implements Queue {
     private Node rear = null;
     private int size = 1;
 
+    private int capacity;
+
+    public QueueBackedByLinkedList(int capacity) {
+        this.capacity = capacity;
+    }
 
     @Override
     public int size() {
@@ -24,19 +29,22 @@ public class QueueBackedByLinkedList implements Queue {
 
     @Override
     public void enqueue(int data) {
-        Node newNode = new Node(data);
+        if (size() >= capacity) {
+            System.out.println("QueueBackedByLinkedList is full!");
+        } else {
+            Node newNode = new Node(data);
 
-        // If queue is empty, then new node is front and rear both
-        if (rear == null) {
-            front = rear = newNode;
-            return;
+            // If queue is empty, then new node is front and rear both
+            if (rear == null) {
+                front = rear = newNode;
+                return;
+            }
+
+            // Add the new node at the end of queue and change rear
+            rear.next = newNode;
+            rear = newNode;
+            size++;
         }
-
-        // Add the new node at the end of queue and change rear
-        rear.next = newNode;
-        rear = newNode;
-        size++;
-
     }
 
     @Override

@@ -9,7 +9,7 @@ public class Main {
         operateOnQueue(queueBackedByArray);
 
         System.out.println("\n>> QueueBackedByLinkedList:");
-        QueueBackedByLinkedList queueBackedByLinkedList = new QueueBackedByLinkedList();
+        QueueBackedByLinkedList queueBackedByLinkedList = new QueueBackedByLinkedList(5);
         operateOnQueue(queueBackedByLinkedList);
     }
 
