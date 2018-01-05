@@ -3,20 +3,27 @@ package com.nisrulz.github.queue;
 public class Main {
 
     public static void main(String[] args) {
-        Queue queue = new Queue(5);
 
+        System.out.println("\n>> QueueBackedByArray:");
+        QueueBackedByArray queueBackedByArray = new QueueBackedByArray(5);
+        operateOnQueue(queueBackedByArray);
+
+        System.out.println("\n>> QueueBackedByLinkedList:");
+        QueueBackedByLinkedList queueBackedByLinkedList = new QueueBackedByLinkedList();
+        operateOnQueue(queueBackedByLinkedList);
+    }
+
+
+    private static void operateOnQueue(Queue queue) {
         // would output empty queue
         int val = queue.dequeue();
         System.out.println(val);
 
-        queue.enqeue(5);
-        queue.enqeue(4);
-        queue.enqeue(3);
-        queue.enqeue(2);
-        queue.enqeue(1);
-
-        // would output, queue is full
-        queue.enqeue(0);
+        queue.enqueue(5);
+        queue.enqueue(4);
+        queue.enqueue(3);
+        queue.enqueue(2);
+        queue.enqueue(1);
 
 
         val = queue.dequeue();
