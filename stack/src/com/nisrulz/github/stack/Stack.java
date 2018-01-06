@@ -6,4 +6,8 @@ interface Stack {
     void push(int data);
 
     int pop();
+
+    boolean isFull();
+
+    boolean isEmpty();
 }

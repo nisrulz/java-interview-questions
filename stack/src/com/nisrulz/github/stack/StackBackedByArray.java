@@ -17,20 +17,33 @@ public class StackBackedByArray implements Stack {
     @Override
     public void push(int data) {
 
-        if (top == arr.length - 1) {
+        if (!isFull()) {
+            arr[++top] = data;
+        } else {
             System.out.println("StackBackedByArray is full!");
             return;
         }
-        arr[++top] = data;
+
     }
 
     @Override
     public int pop() {
-
-        if (top == -1) {
+        if (!isEmpty()) {
+            return arr[top--];
+        } else {
             System.out.println("StackBackedByArray is empty!");
             return -1;
         }
-        return arr[top--];
+
+    }
+
+    @Override
+    public boolean isFull() {
+        return (top == arr.length - 1);
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return top == -1;
     }
 }

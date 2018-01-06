@@ -11,6 +11,10 @@ public class Main {
         System.out.println("\n>> StackBackedByLinkedList:");
         StackBackedByLinkedList stackBackedByLinkedList = new StackBackedByLinkedList(5);
         operateOnStack(stackBackedByLinkedList);
+
+        System.out.println("\n>> StackBackedByTwoQueues:");
+        StackBackedByTwoQueues stackBackedByTwoQueues = new StackBackedByTwoQueues(5);
+        operateOnStack(stackBackedByTwoQueues);
     }
 
 
@@ -25,7 +29,6 @@ public class Main {
             // get size of stack
             System.out.println("Value added " + i + ", Size of Stack: " + stack.size());
         }
-
 
         // remove value from stack
         System.out.println("\n> Removing values from stack\n");
