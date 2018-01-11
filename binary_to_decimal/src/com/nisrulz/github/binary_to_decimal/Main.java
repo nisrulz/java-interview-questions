@@ -15,17 +15,12 @@ public class Main {
     }
 
     private static int binaryToDecimal_2(int binaryNumber) {
-        int decimal = 0;
-        int n = 0;
-        while (true) {
-            if (binaryNumber == 0) {
-                break;
-            } else {
-                int temp = binaryNumber % 10;
-                decimal += temp * Math.pow(2, n);
-                binaryNumber = binaryNumber / 10;
-                n++;
-            }
+        int decimal = 0, p = 0;
+
+        while (binaryNumber != 0) {
+            decimal += ((binaryNumber % 10) * Math.pow(2, p));
+            binaryNumber = binaryNumber / 10;
+            p++;
         }
         return decimal;
     }
