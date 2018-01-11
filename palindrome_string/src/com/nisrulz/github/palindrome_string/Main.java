@@ -11,13 +11,19 @@ public class Main {
         String[] strArray = {"abcdcba", "abcd", "This is palindrome", "cat", "taco cat", "wow", "hello", "racecar", "madam"};
 
         for (int i = 0; i < strArray.length; i++) {
-            System.out.println(isPalindrome(strArray[i]) ? "[Palindrome] "+ strArray[i]: "[Not Palindrome] "+ strArray[i]);
+            System.out.println(isPalindrome(strArray[i]) ? "[Palindrome] " + strArray[i] : "[Not Palindrome] " + strArray[i]);
 
         }
     }
 
     private static boolean isPalindrome(String str) {
+
+        // replace spaces
+        str = str.replace(" ", "");
+
         StringBuilder strBuilder = new StringBuilder(str);
+
+
         return strBuilder.reverse().toString().equalsIgnoreCase(str);
     }
 }
