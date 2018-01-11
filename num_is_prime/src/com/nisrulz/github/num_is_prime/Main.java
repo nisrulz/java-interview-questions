@@ -7,7 +7,7 @@ public class Main {
         int startLimit = 20;
         int endLimit = 100;
 
-        System.out.println("Primes Numbers from 0-50:");
+        System.out.printf("\nPrimes Numbers from %d-%d: \n", startLimit, endLimit);
 
         for (int i = startLimit; i <= endLimit; i++) {
             System.out.print(isPrime(i) ? i + " " : "");
