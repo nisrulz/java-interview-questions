@@ -3,7 +3,7 @@ package com.nisrulz.github.binary_to_decimal;
 public class Main {
 
     public static void main(String[] args) {
-        String binaryNumber = "0101";
+        String binaryNumber = "0100";
 
         System.out.printf("\nImplementation Type 1\nBinary: [%s] ==> Decimal: [%d]: \n", binaryNumber, binaryToDecimal_1(binaryNumber));
 

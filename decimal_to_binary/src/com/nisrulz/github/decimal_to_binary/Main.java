@@ -3,20 +3,30 @@ package com.nisrulz.github.decimal_to_binary;
 public class Main {
 
     public static void main(String[] args) {
-        int decimalNumber = 5;
+        int upperLimit = 10;
 
-        System.out.printf("\nImplementation Type 1\nDecimal: [%d] ==> Binary: [%s]: \n", decimalNumber, decimalToBinary_1(decimalNumber));
+        for (int i = 0; i < upperLimit; i++) {
+            System.out.printf("\nDecimal: [%d] ==> Binary: [%s]", i, decimalToBinary(i));
+        }
     }
 
-    private static String decimalToBinary_1(int decimalNumber) {
+    private static String decimalToBinary(int decimalNumber) {
 
-        StringBuilder binaryNumber = new StringBuilder();
+        StringBuilder moduloStringBuilder = new StringBuilder();
 
-        while (decimalNumber != 0) {
-            binaryNumber.append((decimalNumber % 2));
+        if (decimalNumber == 0) {
+            return "0";
+        }
+
+        while (decimalNumber > 0) {
+            moduloStringBuilder.append((decimalNumber % 2));
             decimalNumber /= 2;
         }
 
-        return binaryNumber.toString();
+        // the string builder consists of remainders in the reverse order, so we will reverse it to get the right answer
+        moduloStringBuilder.reverse();
+
+        String binaryNumber = moduloStringBuilder.toString();
+        return binaryNumber;
     }
 }
