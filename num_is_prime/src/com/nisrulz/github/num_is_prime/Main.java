@@ -4,19 +4,23 @@ public class Main {
 
     public static void main(String[] args) {
 
+        int startLimit = 20;
+        int endLimit = 100;
+
         System.out.println("Primes Numbers from 0-50:");
-        for (int i = 0; i <= 50; i++) {
+
+        for (int i = startLimit; i <= endLimit; i++) {
             System.out.print(isPrime(i) ? i + " " : "");
         }
     }
-
 
     public static boolean isPrime(int number) {
         // 0 and 1 are not prime numbers
         if (number < 2) {
             return false;
         }
-        for (int i = 2; i < number; i = i + 2) {
+        // any other number if it is divisible by any other number is not a prime number
+        for (int i = 2; i < number; i++) {
             if (number % i == 0) {
                 return false;
             }
