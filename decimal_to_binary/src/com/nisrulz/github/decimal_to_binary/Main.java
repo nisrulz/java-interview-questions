@@ -10,13 +10,13 @@ public class Main {
 
     private static String decimalToBinary_1(int decimalNumber) {
 
-        String binaryNumber = "";
+        StringBuilder binaryNumber = new StringBuilder();
 
         while (decimalNumber != 0) {
-            binaryNumber += (decimalNumber % 2);
+            binaryNumber.append((decimalNumber % 2));
             decimalNumber /= 2;
         }
 
-        return binaryNumber;
+        return binaryNumber.toString();
     }
 }
