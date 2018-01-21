@@ -29,3 +29,5 @@ Byte sized java tech interview coding questions
 1. [Stack](/stack/)
 1. [Swap without temp variable](/swap_without_temp_var/)
 1. [Unique characters in a string](/unique_chars_in_string/)
+1. [Data Encoding](/data_encoding)
+1. [Polygon Identifier](/polygon_identifier)
